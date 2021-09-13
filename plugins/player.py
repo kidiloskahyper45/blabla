@@ -168,7 +168,7 @@ async def clear_play_list(client, m: Message):
 async def yt_play_list(client, m: Message):
     if m.reply_to_message is not None and m.reply_to_message.document:
         if m.reply_to_message.document.file_name != "YouTube_PlayList.json":
-            await m.reply("Invalid PlayList file given. Use @GetPlayListBot  or search for a playlist in @DumpPlaylist to get a playlist file.")
+            await m.reply("Invalid PlayList file given. Use @Miss_Monica_bot  or search for a playlist in @Noravc_bot to get a playlist file.")
             return
         ytplaylist=await m.reply_to_message.download()
         status=await m.reply("Trying to get details from playlist.")
@@ -186,7 +186,7 @@ async def yt_play_list(client, m: Message):
         else:
             await status.delete()
     else:
-        await m.reply("No playList file given. Use @GetPlayListBot  or search for a playlist in @DumpPlaylist to get a playlist file.")
+        await m.reply("No playList file given. Use @Miss_Monica_bot  or search for a playlist in @Noravc_bot to get a playlist file.")
 
 
 @Client.on_message(filters.command(["stream", f"stream@{Config.BOT_USERNAME}"]) & admin_filter & (filters.chat(Config.CHAT) | filters.private))
@@ -222,8 +222,8 @@ allcmd = ["play", "player", f"play@{Config.BOT_USERNAME}", f"player@{Config.BOT_
 async def not_chat(_, m: Message):
     buttons = [
         [
-            InlineKeyboardButton('⚡️Make Own Bot', url='https://github.com/subinps/VCPlayerBot'),
-            InlineKeyboardButton('🧩 Join Here', url='https://t.me/subin_works'),
+            InlineKeyboardButton('⚡️Make Own Bot', url='https://t.me/rosebakthan'),
+            InlineKeyboardButton('🧩 Join Here', url='https://t.me/rosebakthan'),
         ]
         ]
     await m.reply("<b>You can't use this bot in this group, for that you have to make your own bot from the [SOURCE CODE](https://github.com/subinps/VCPlayerBot) below.</b>", disable_web_page_preview=True, reply_markup=InlineKeyboardMarkup(buttons))
